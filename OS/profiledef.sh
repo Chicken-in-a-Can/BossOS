@@ -4,7 +4,7 @@
 iso_name="BossOS"
 iso_label="bOSs_$RANDOM"
 iso_publisher="The Executors"
-iso_application="BossOS Live/Rescue CD"
+iso_application="BossOS Live/Rescue Image"
 iso_version="0.0.1"
 install_dir="boss"
 buildmodes=('iso')
