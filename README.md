@@ -1,7 +1,7 @@
 # BossOS
 The EXECUTIVE operating system
 ## Features
-Ugly\n
+Ugly
 Bad
 Weird
 Maybe only slightly functional
