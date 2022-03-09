@@ -1,2 +1,2 @@
 # BossOS
-The EXECUTIVE Operating System
+The EXECUTIVE operating system
