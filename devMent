@@ -1,0 +1,4 @@
+alias bossPull="git pull --rebase"
+alias bossPush="git push"
+alias execPush="git push --force"
+alias bossAdd="git add ."
