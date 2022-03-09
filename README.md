@@ -11,7 +11,7 @@ B - business
 o - operating
 s - system
 s - slightly
-O - operational
+O - Operational
 S - Satisfaction
 
 ## Features
