@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="archlinux"
-iso_label="ARCH_$(date +%Y%m)"
-iso_publisher="Arch Linux <https://archlinux.org>"
-iso_application="Arch Linux Live/Rescue CD"
-iso_version="$(date +%Y.%m.%d)"
-install_dir="arch"
+iso_name="BossOS"
+iso_label="bOSs_$RANDOM"
+iso_publisher="The Executors"
+iso_application="BossOS Live/Rescue CD"
+iso_version="0.0.1"
+install_dir="boss"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito' 'uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')
 arch="x86_64"

@@ -10,6 +10,7 @@ broadcom-wl
 btrfs-progs
 clonezilla
 cloud-init
+cmake
 crda
 cryptsetup
 darkhttpd
@@ -29,6 +30,7 @@ exfatprogs
 f2fs-tools
 fatresize
 fsarchiver
+gcc
 gnu-netcat
 gpart
 gpm
@@ -43,6 +45,8 @@ irssi
 iw
 iwd
 jfsutils
+jre-openjdk
+jdk-openjdk
 kitty-terminfo
 less
 lftp
@@ -69,6 +73,7 @@ mtools
 nano
 nbd
 ndisc6
+net-tools
 nfs-utils
 nilfs-utils
 nmap
@@ -84,6 +89,7 @@ pcsclite
 ppp
 pptpclient
 pv
+python3
 qemu-guest-agent
 refind
 reflector
@@ -116,6 +122,7 @@ wireless-regdb
 wireless_tools
 wpa_supplicant
 wvdial
+xcfce4
 xfsprogs
 xl2tpd
 zsh
