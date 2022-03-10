@@ -7,12 +7,12 @@ BossOS, stylized as bOSs, is the EXECUTIVE operating system
 - It is very EXECUTIVE.
 
 ## What does BossOS stand for?
-B - business
-o - operating
-s - system
-s - slightly
-O - Operational
-S - Satisfaction
+B - business  
+o - operating  
+s - system  
+s - slightly  
+O - Operational  
+S - Satisfaction  
 
 ## Features
 IT IS VERY EXECUTIVE
