@@ -4,8 +4,8 @@
 iso_name="BossOS"
 iso_label="bOSs_$RANDOM"
 iso_publisher="The Executors"
-iso_application="BossOS Live/Rescue Image"
-iso_version="0.0.1"
+iso_application="BossOS Live Image"
+iso_version="0.1.0"
 install_dir="boss"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito' 'uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')
