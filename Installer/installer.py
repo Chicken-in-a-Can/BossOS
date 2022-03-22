@@ -176,7 +176,7 @@ def getSelk(event):
     ttk.Label(keyboard, text=" "*60).grid(column=0, row=2, stick="W")
     buttonk["state"] = tk.NORMAL
 
-optionsk = getKeyb("state.txt")
+optionsk = getKeyb("keyboard_layout.txt")
 ttk.Label(keyboard, text="Keyboard Selection", font=("Times", 24)).grid(column=0, row=0)
 
 labk = ttk.Label(keyboard, text="Select Keyboard Layout")
@@ -188,6 +188,13 @@ dropk.bind("<<ComboboxSelected>>", getSelk)
 
 # Back button
 ttk.Button(keyboard, text="Back", command=backBtn).grid(column=1, row=3, sticky="NE")
+
+##############
+# Partioning #
+##############
+
+
+
 #     _______   ______     __  ______
 #    / ____/ | / / __ \   / / / /  _/
 #   / __/ /  |/ / / / /  / / / // /  
