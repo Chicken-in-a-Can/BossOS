@@ -29,7 +29,7 @@ def getStates(filename):
     # Remove last element since it is an empty string
     states.pop(len(states)-1)
 
-    # Append "ian" to all cities
+    # Append "ian" to all states
     newstat = []
     for state in states:
         newstat.append(state+"ian")
@@ -47,6 +47,12 @@ def getKeyb(filename):
     key.pop(len(key)-1)
 
     return key
+
+def backBtn():
+    currTab = tabControl.index("current")
+    tabControl.tab(currTab-1, state="normal")
+    tabControl.select(currTab-1)
+    tabControl.tab(currTab, state="disabled")
 #    __  ______   _____ ______________  ______ 
 #   / / / /  _/  / ___// ____/_  __/ / / / __ \
 #  / / / // /    \__ \/ __/   / / / / / / /_/ /
@@ -151,6 +157,9 @@ dropl = ttk.Combobox(lang, values=optionsl, height=20, state="readonly")
 dropl.grid(column=1, row=1, sticky="NE", pady=10)
 dropl.bind("<<ComboboxSelected>>", getSell)
 
+# Back button
+ttk.Button(lang, text="Back", command=backBtn).grid(column=1, row=3, sticky="NE")
+
 ######################
 # Keyboard Selection #
 ######################
@@ -177,6 +186,8 @@ dropk = ttk.Combobox(keyboard, values=optionsk, height=20, state="readonly")
 dropk.grid(column=1, row=1, sticky="NE", pady=10)
 dropk.bind("<<ComboboxSelected>>", getSelk)
 
+# Back button
+ttk.Button(keyboard, text="Back", command=backBtn).grid(column=1, row=3, sticky="NE")
 #     _______   ______     __  ______
 #    / ____/ | / / __ \   / / / /  _/
 #   / __/ /  |/ / / / /  / / / // /  
@@ -184,3 +195,10 @@ dropk.bind("<<ComboboxSelected>>", getSelk)
 # /_____/_/ |_/_____/   \____/___/   
 
 root.mainloop()
+
+# TODO
+#     ___        __              __   ____           __        ____         
+#    /   | _____/ /___  ______ _/ /  /  _/___  _____/ /_____ _/ / /__  _____
+#   / /| |/ ___/ __/ / / / __ `/ /   / // __ \/ ___/ __/ __ `/ / / _ \/ ___/
+#  / ___ / /__/ /_/ /_/ / /_/ / /  _/ // / / (__  ) /_/ /_/ / / /  __/ /    
+# /_/  |_\___/\__/\__,_/\__,_/_/  /___/_/ /_/____/\__/\__,_/_/_/\___/_/     
