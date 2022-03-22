@@ -20,22 +20,33 @@ def getCities(filename):
     return newcit
 
 def getStates(filename):
-    cities = []
+    states = []
     with open(filename, "r") as f:
-        cities = f.read()
-        cities = cities.split("\n")
+        states = f.read()
+        states = states.split("\n")
         f.close()
 
     # Remove last element since it is an empty string
-    cities.pop(len(cities)-1)
+    states.pop(len(states)-1)
 
-    # Append ", TX" to all cities
-    newcit = []
-    for city in cities:
-        newcit.append(city+"ian")
+    # Append "ian" to all cities
+    newstat = []
+    for state in states:
+        newstat.append(state+"ian")
     
-    return newcit
+    return newstat
 
+def getKeyb(filename):
+    key = []
+    with open(filename, "r") as f:
+        key = f.read()
+        key = key.split("\n")
+        f.close()
+
+    # Remove last element since it is an empty string
+    key.pop(len(key)-1)
+
+    return key
 #    __  ______   _____ ______________  ______ 
 #   / / / /  _/  / ___// ____/_  __/ / / / __ \
 #  / / / // /    \__ \/ __/   / / / / / / /_/ /
@@ -92,7 +103,7 @@ button.grid(column=0, row=3, sticky="W")
 
 # Working with the drop down to get the selected city
 def getSel(event):
-    ttk.Label(timezone, text=" "*50).grid(column=0, row=2, sticky="W")
+    ttk.Label(timezone, text=" "*60).grid(column=0, row=2, sticky="W")
     if drop.get() in ["El Paso, TX", "Socorro, TX"]:
         ttk.Label(timezone, text="Please select a valid continent").grid(column=0, row=2, sticky="W")
         button["state"] = tk.DISABLED
@@ -118,14 +129,53 @@ drop.bind("<<ComboboxSelected>>", getSel)
 # Language Selection #
 ######################
 
-# TITLE!!!!! :)
-ttk.Label(lang, text="Language Selection", font=("Times", 24)).grid(column=0, row=0, sticky="NW")
+def confirml():
+    tabControl.tab(2, state="normal")
+    tabControl.select(tab_id=2)
+    tabControl.tab(1, state="disabled")
 
-ttk.Label(lang, text="Select country that will or might or potentially be used in the selection of the language that the system will be in :)").grid(column=0, row=1) 
+ttk.Label(lang, text=" "*50).grid(column=0,row=2, sticky="W")
+buttonl = tk.Button(lang, text="Confirm", state="disabled", command=confirml)
+buttonl.grid(column=0, row=3, sticky="W")
+def getSell(event):
+    ttk.Label(lang, text=" "*60).grid(column=0, row=2, stick="W")
+    buttonl["state"] = tk.NORMAL
 
-conti = getStates("states.txt")
-countDrop = ttk.Combobox(lang, values=conti, height=51, state="readonly").grid(column=0, row=2, sticky="NW", pady=10)
-#drop.bind("<<ComboboxSelected>>", getSel)
+optionsl = getStates("states.txt")
+ttk.Label(lang, text="Language Selection", font=("Times", 24)).grid(column=0, row=0)
+
+labl = ttk.Label(lang, text="Select Language")
+labl.grid(column=0, row=1, sticky="NW", pady=10)
+
+dropl = ttk.Combobox(lang, values=optionsl, height=20, state="readonly")
+dropl.grid(column=1, row=1, sticky="NE", pady=10)
+dropl.bind("<<ComboboxSelected>>", getSell)
+
+######################
+# Keyboard Selection #
+######################
+
+def confirmk():
+    tabControl.tab(3, state="normal")
+    tabControl.select(tab_id=3)
+    tabControl.tab(2, state="disabled")
+
+ttk.Label(keyboard, text=" "*50).grid(column=0,row=2, sticky="W")
+buttonk = tk.Button(keyboard, text="Confirm", state="disabled", command=confirmk)
+buttonk.grid(column=0, row=3, sticky="W")
+def getSelk(event):
+    ttk.Label(keyboard, text=" "*60).grid(column=0, row=2, stick="W")
+    buttonk["state"] = tk.NORMAL
+
+optionsk = getKeyb("state.txt")
+ttk.Label(keyboard, text="Keyboard Selection", font=("Times", 24)).grid(column=0, row=0)
+
+labk = ttk.Label(keyboard, text="Select Keyboard Layout")
+labk.grid(column=0, row=1, sticky="NW", pady=10)
+
+dropk = ttk.Combobox(keyboard, values=optionsk, height=20, state="readonly")
+dropk.grid(column=1, row=1, sticky="NE", pady=10)
+dropk.bind("<<ComboboxSelected>>", getSelk)
 
 #     _______   ______     __  ______
 #    / ____/ | / / __ \   / / / /  _/
