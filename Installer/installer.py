@@ -53,6 +53,7 @@ def backBtn():
     tabControl.tab(currTab-1, state="normal")
     tabControl.select(currTab-1)
     tabControl.tab(currTab, state="disabled")
+    progbar.step(amount = -1)
 #    __  ______   _____ ______________  ______ 
 #   / / / /  _/  / ___// ____/_  __/ / / / __ \
 #  / / / // /    \__ \/ __/   / / / / / / /_/ /
@@ -85,6 +86,9 @@ tabControl.add(users, text="Users", state="disabled")
 tabControl.add(summary, text="Summary", state="disabled")
 tabControl.add(install, text="Installation", state="disabled")
 
+progbar = ttk.Progressbar(root, orient="vertical", maximum=tabControl.index("end"))
+progbar.pack(side="left", fill="y")
+ttk.Separator(root, orient="vertical").pack(side="left", fill="y", padx=2)
 tabControl.pack(expand=1, fill="both")
 
 #    __  ______   __________  ____  ______
@@ -102,6 +106,7 @@ def confirm():
     tabControl.tab(1, state="normal")
     tabControl.tab(0, state="disabled")
     tabControl.select(tab_id=1)
+    progbar.step()
 
 ttk.Label(timezone, text=" "*50).grid(column=0, row=2, sticky="W")
 button = ttk.Button(timezone, text="Confirm", state="disabled", command=confirm)
@@ -139,6 +144,7 @@ def confirml():
     tabControl.tab(2, state="normal")
     tabControl.select(tab_id=2)
     tabControl.tab(1, state="disabled")
+    progbar.step()
 
 ttk.Label(lang, text=" "*50).grid(column=0,row=2, sticky="W")
 buttonl = tk.Button(lang, text="Confirm", state="disabled", command=confirml)
@@ -168,6 +174,7 @@ def confirmk():
     tabControl.tab(3, state="normal")
     tabControl.select(tab_id=3)
     tabControl.tab(2, state="disabled")
+    progbar.step()
 
 ttk.Label(keyboard, text=" "*50).grid(column=0,row=2, sticky="W")
 buttonk = tk.Button(keyboard, text="Confirm", state="disabled", command=confirmk)
@@ -190,10 +197,22 @@ dropk.bind("<<ComboboxSelected>>", getSelk)
 ttk.Button(keyboard, text="Back", command=backBtn).grid(column=1, row=3, sticky="NE")
 
 ##############
-# Partioning #
+# Partitioning #
 ##############
 
+# TODO: Actually make this work
+# Entry box: https://www.geeksforgeeks.org/python-tkinter-entry-widget/
+# Checkbox: https://pythonbasics.org/tkinter-checkbox/
 
+ttk.Label(part, text="Partition Selection", font=("Times", 24)).grid(column=0, row=0)
+ttk.Label(part, text="Enter device where the OS will be installed\nNOTE: Because we are banger programmers this will not dual boot and WILL wipe the entire drive :)\nNOTE Again: Please make sure what you entered is correct, we do not have the braincells to actually check if it is :)").grid(column=0, row=1)
+ttk.Entry(part).grid(column=0, row=2, sticky="NW")
+
+# Wow, actually making this useful
+ttk.Checkbutton(part, text="EFI?").grid(column=0, row=3, sticky="NW")
+ttk.Checkbutton(part, text="Swap Partition?").grid(column=0, row=4, sticky="NW")
+
+ttk.Entry(part, state="disabled").grid(column=0, row=5, sticky="NW")
 
 #     _______   ______     __  ______
 #    / ____/ | / / __ \   / / / /  _/
