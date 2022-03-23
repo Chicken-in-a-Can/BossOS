@@ -66,7 +66,7 @@ root = tk.Tk()
 root.title("bOSs Intaller")
 
 # set window size
-root.geometry("600x200")
+root.geometry("800x250")
 
 # setting up tabs
 tabControl = ttk.Notebook(root)
@@ -196,23 +196,40 @@ dropk.bind("<<ComboboxSelected>>", getSelk)
 # Back button
 ttk.Button(keyboard, text="Back", command=backBtn).grid(column=1, row=3, sticky="NE")
 
-##############
+################
 # Partitioning #
-##############
+################
 
 # TODO: Actually make this work
 # Entry box: https://www.geeksforgeeks.org/python-tkinter-entry-widget/
 # Checkbox: https://pythonbasics.org/tkinter-checkbox/
 
-ttk.Label(part, text="Partition Selection", font=("Times", 24)).grid(column=0, row=0)
+def swapy():
+    if swap.get() == True:
+        swapsize['state'] = "normal"
+    else:
+        swapsize['state'] = "disabled"
+
+ttk.Label(part, text="Partition Selection", font=("Times", 24)).grid(column=0, row=0, sticky="NW")
 ttk.Label(part, text="Enter device where the OS will be installed\nNOTE: Because we are banger programmers this will not dual boot and WILL wipe the entire drive :)\nNOTE Again: Please make sure what you entered is correct, we do not have the braincells to actually check if it is :)").grid(column=0, row=1)
-ttk.Entry(part).grid(column=0, row=2, sticky="NW")
+device = ttk.Entry(part).grid(column=0, row=2, sticky="NW")
+
+ttk.Separator(part).grid(column=0,row=3, pady=10)
 
 # Wow, actually making this useful
-ttk.Checkbutton(part, text="EFI?").grid(column=0, row=3, sticky="NW")
-ttk.Checkbutton(part, text="Swap Partition?").grid(column=0, row=4, sticky="NW")
+efi = tk.BooleanVar()
+swap = tk.BooleanVar()
 
-ttk.Entry(part, state="disabled").grid(column=0, row=5, sticky="NW")
+ttk.Checkbutton(part, text="EFI?", variable=efi, onvalue=True, offvalue=False).grid(column=0, row=4, sticky="NW")
+ttk.Checkbutton(part, text="Swap Partition?", variable=swap, onvalue=True, offvalue=False, command=swapy).grid(column=0, row=5, sticky="NW")
+
+# have to specify "to" because tkinter is weird when it isn't
+swapsize = ttk.Spinbox(part, from_=0, to=99999999999999999999999999999999999999999999999999999999, format="%0.0f MB", state="disabled")
+swapsize.grid(column=0, row=6, sticky="W")
+swapsize.set(0)
+
+ttk.Button(part, text="Confirm").grid(column=0, row=7, sticky="W", pady=10)
+ttk.Button(part, text="Back", command=backBtn).grid(column=1, row=7, sticky="NE", pady=10)
 
 #     _______   ______     __  ______
 #    / ____/ | / / __ \   / / / /  _/
