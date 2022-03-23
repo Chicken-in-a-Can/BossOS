@@ -210,6 +210,11 @@ def swapy():
     else:
         swapsize['state'] = "disabled"
 
+def confirmp():
+    tabControl.tab(3, state="disabled")
+    tabControl.tab(4, state="normal")
+    tabControl.select(4)
+
 ttk.Label(part, text="Partition Selection", font=("Times", 24)).grid(column=0, row=0, sticky="NW")
 ttk.Label(part, text="Enter device where the OS will be installed\nNOTE: Because we are banger programmers this will not dual boot and WILL wipe the entire drive :)\nNOTE Again: Please make sure what you entered is correct, we do not have the braincells to actually check if it is :)").grid(column=0, row=1)
 device = ttk.Entry(part).grid(column=0, row=2, sticky="NW")
@@ -228,7 +233,7 @@ swapsize = ttk.Spinbox(part, from_=0, to=999999999999999999999999999999999999999
 swapsize.grid(column=0, row=6, sticky="W")
 swapsize.set(0)
 
-ttk.Button(part, text="Confirm").grid(column=0, row=7, sticky="W", pady=10)
+ttk.Button(part, text="Confirm", command=confirmp).grid(column=0, row=7, sticky="W", pady=10)
 ttk.Button(part, text="Back", command=backBtn).grid(column=1, row=7, sticky="NE", pady=10)
 
 #     _______   ______     __  ______
