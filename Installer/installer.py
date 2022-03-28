@@ -153,6 +153,7 @@ drop.bind("<<ComboboxSelected>>", getSel)
 # Language Selection #
 ######################
 
+# Go to next tab, disable current one, add progress
 def confirml():
     tabControl.tab(2, state="normal")
     tabControl.select(tab_id=2)
@@ -183,6 +184,7 @@ ttk.Button(lang, text="Back", command=backBtn).grid(column=1, row=3, sticky="NE"
 # Keyboard Selection #
 ######################
 
+# Go to next tab, disable current one, add progress
 def confirmk():
     tabControl.tab(3, state="normal")
     tabControl.select(tab_id=3)
@@ -223,10 +225,12 @@ def swapy():
     else:
         swapsize['state'] = "disabled"
 
+# Go to next tab, disable current one, add progress
 def confirmp():
     tabControl.tab(3, state="disabled")
     tabControl.tab(4, state="normal")
     tabControl.select(4)
+    progbar.step()
 
 ttk.Label(part, text="Partition Selection", font=("Times", 24)).grid(column=0, row=0, sticky="NW")
 ttk.Label(part, text="Enter device where the OS will be installed\nNOTE: Because we are banger programmers this will not dual boot and WILL wipe the entire drive :)\nNOTE Again: Please make sure what you entered is correct, we do not have the braincells to actually check if it is :)").grid(column=0, row=1)
