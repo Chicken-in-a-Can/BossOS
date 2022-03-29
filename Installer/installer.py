@@ -7,6 +7,7 @@
 import tkinter as tk
 from tkinter import ttk
 import os
+import archinstall
 
 #   ______________    ____  ______   __________  ____  ______
 #  / ___/_  __/   |  / __ \/_  __/  / ____/ __ \/ __ \/ ____/

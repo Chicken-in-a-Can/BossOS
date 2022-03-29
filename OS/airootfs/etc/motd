@@ -1,10 +1,9 @@
-To install [38;2;23;147;209mArch Linux[0m follow the installation guide:
-https://wiki.archlinux.org/title/Installation_guide
+Welcome to BossOS!
 
-For Wi-Fi, authenticate to the wireless network using the [35miwctl[0m utility.
-For mobile broadband (WWAN) modems, connect with the [35mmmcli[0m utility.
-Ethernet, WLAN and WWAN interfaces using DHCP should work automatically.
+To install BossOS, run "python installer.py". Otherwise, use the Arch-based
+live environment. Submit issues at https://github.com/Chicken-in-a-Can/BossOS
+Source code is there as well.
 
-After connecting to the internet, the installation guide can be accessed
-via the convenience script [35mInstallation_guide[0m.
+Username = root
+Password = archlinux
 
