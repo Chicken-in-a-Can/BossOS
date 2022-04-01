@@ -11,12 +11,14 @@ def leng(length):
 
 opts = sys.argv[:]
 
+#Assign credentials to array
 creds = []
 with open(".cred", "r") as f:
 	creds = f.readlines()
 	f.close()
 creds = [cred[:-1] for cred in creds]
 
+#Break if no credenials
 if len(creds) < 3:
         sys.exit("Please set device information\nRun BossPhone with the operator \"-i\" to see set device information\nRun BossPhone with the operator \"-h\" to see correct syntax")
 
@@ -57,7 +59,7 @@ elif opt == "-i":
 	os.system("echo \"" + opts[4] + "\" >> .cred")
 else:
 	if opt != "-h":
-		print(opt + " is not an operator")
+		print(opt + " is not an operator\n")
 	print("-h                        Print this help message")
 	print("-m message                Display message on screen of phone")
 	print("-s message                Use text-to-speach to say message")
