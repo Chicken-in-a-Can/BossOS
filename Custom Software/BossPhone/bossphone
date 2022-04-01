@@ -55,6 +55,9 @@ elif opt == "-f":
 elif opt == "-c":
 	leng(3)
 	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-telephony-call \\\"" + opts[2] + "\\\"\"")
+elif opt == "-v":
+	leng(3)
+	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-clipboard-set \\\"" + opts[2] + "\\\"\"")
 elif opt == "-i":
 	leng(5)
 	os.system("echo \"" + opts[2] + "\" > .cred")
@@ -72,3 +75,4 @@ else:
 	print("-f on/off                 Turn flashlight on or off")
 	print("-c number                 Call a specified number")
 	print("-i username ip password   Set user information")
+	print("-v message                Copy message to clipboard")
