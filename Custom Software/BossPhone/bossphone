@@ -17,6 +17,10 @@ with open(".cred", "r") as f:
 	f.close()
 creds = [cred[:-1] for cred in creds]
 
+if len(creds) < 3:
+        sys.exit("Please set device information\nRun BossPhone with the operator \"-i\" to see set device information\nRun BossPhone with the operator \"-h\" to see correct syntax")
+
+
 usr = str(creds[0])
 ip = str(creds[1])
 passwd = str(creds[2])
