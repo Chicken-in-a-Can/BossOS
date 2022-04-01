@@ -72,20 +72,24 @@ elif opt == "-l":
 elif opt == "-g":
 	leng(3)
 	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-brightness \\\"" + opts[2] + "\\\"\"")
+elif opt == "-n":
+	leng(3)
+	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-notification -t \\\"" + opts[2] + "\\\"\"")
 else:
 	if opt != "-i":
 		if opt != "-h":
 			print(opt + " is not an operator\n")
 		print("-h                        Print this help message")
 		print("-p                        Take photo with phone's camera")
-		print("-b                        Get battery percentage and information")
 		print("-m message                Display message on screen of phone")
 		print("-s message                Use text-to-speach to say message")
 		print("-t number message         Send text message to specified number")
 		print("-f on/off                 Turn flashlight on or off")
 		print("-c number                 Call a specified number")
 		print("-i username ip password   Set user information")
+		print("-b                        Get battery percentage and information")
 		print("-v message                Copy message to clipboard")
 		print("-x message                Get message from clipboard")
 		print("-l                        Get location and GPS data")
 		print("-g 0-255                  Change how much your screen glows")
+		print("-n message                Send notification that says message to phone")
