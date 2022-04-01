@@ -69,6 +69,9 @@ elif opt == "-x":
 elif opt == "-l":
 	leng(2)
 	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-location\"")
+elif opt == "-g":
+	leng(3)
+	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-brightness \\\"" + opts[2] + "\\\"\"")
 else:
 	if opt != "-i":
 		if opt != "-h":
@@ -85,3 +88,4 @@ else:
 		print("-v message                Copy message to clipboard")
 		print("-x message                Get message from clipboard")
 		print("-l                        Get location and GPS data")
+		print("-g 0-255                  Change how much your screen glows")
