@@ -46,6 +46,9 @@ elif opt == "-t":
 elif opt == "-p":
 	leng(2)
 	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-camera-photo ~/storage/pictures/$RANDOM.jpg\"")
+elif opt == "-b":
+        leng(2)
+        os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-battery-status\"")
 elif opt == "-f":
 	leng(3)
 	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-torch \\\"" + opts[2] + "\\\"\"")
@@ -61,10 +64,11 @@ else:
 	if opt != "-h":
 		print(opt + " is not an operator\n")
 	print("-h                        Print this help message")
+	print("-p                        Take photo with phone's camera")
+	print("-b                        Get battery percentage and information")
 	print("-m message                Display message on screen of phone")
 	print("-s message                Use text-to-speach to say message")
 	print("-t number message         Send text message to specified number")
-	print("-p                        Take photo with phone's camera")
 	print("-f on/off                 Turn flashlight on or off")
 	print("-c number                 Call a specified number")
 	print("-i username ip password   Set user information")
