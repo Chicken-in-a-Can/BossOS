@@ -11,6 +11,18 @@ def leng(length):
 
 opts = sys.argv[:]
 
+if len(opts) > 1:
+        opt = opts[1]
+else:
+        print("Please input an operator\n")
+        opt = "-h"
+
+if opt == "-i":
+        leng(5)
+        os.system("echo \"" + opts[2] + "\" > .cred")
+        os.system("echo \"" + opts[3] + "\" >> .cred")
+        os.system("echo \"" + opts[4] + "\" >> .cred")
+
 #Assign credentials to array
 creds = []
 with open(".cred", "r") as f:
@@ -20,18 +32,11 @@ creds = [cred[:-1] for cred in creds]
 
 #Break if no credenials
 if len(creds) < 3:
-        sys.exit("Please set device information\nRun BossPhone with the operator \"-i\" to see set device information\nRun BossPhone with the operator \"-h\" to see correct syntax")
-
+        sys.exit("Please set device information\nRun BossPhone with the operator \"-i\" to see device information\nCorrect syntax is ./bossphone -i username ip password")
 
 usr = str(creds[0])
 ip = str(creds[1])
 passwd = str(creds[2])
-
-if len(opts) > 1:
-	opt = opts[1]
-else:
-	print("Please input an operator\n")
-	opt = "-h"
 
 #Actions based on specific input
 if opt == "-m":
@@ -59,24 +64,20 @@ elif opt == "-v":
 	leng(3)
 	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-clipboard-set \\\"" + opts[2] + "\\\"\"")
 elif opt == "-x":
-        leng(3)
-        os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-clipboard-get \\\"" + opts[2] + "\\\"\"")
-elif opt == "-i":
-	leng(5)
-	os.system("echo \"" + opts[2] + "\" > .cred")
-	os.system("echo \"" + opts[3] + "\" >> .cred")
-	os.system("echo \"" + opts[4] + "\" >> .cred")
+        leng(2)
+        os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-clipboard-get && echo \\\"\\\"\"")
 else:
-	if opt != "-h":
-		print(opt + " is not an operator\n")
-	print("-h                        Print this help message")
-	print("-p                        Take photo with phone's camera")
-	print("-b                        Get battery percentage and information")
-	print("-m message                Display message on screen of phone")
-	print("-s message                Use text-to-speach to say message")
-	print("-t number message         Send text message to specified number")
-	print("-f on/off                 Turn flashlight on or off")
-	print("-c number                 Call a specified number")
-	print("-i username ip password   Set user information")
-	print("-v message                Copy message to clipboard")
-	print("-x message                Get message from clipboard")
+	if opt != "-i":
+		if opt != "-h":
+			print(opt + " is not an operator\n")
+		print("-h                        Print this help message")
+		print("-p                        Take photo with phone's camera")
+		print("-b                        Get battery percentage and information")
+		print("-m message                Display message on screen of phone")
+		print("-s message                Use text-to-speach to say message")
+		print("-t number message         Send text message to specified number")
+		print("-f on/off                 Turn flashlight on or off")
+		print("-c number                 Call a specified number")
+		print("-i username ip password   Set user information")
+		print("-v message                Copy message to clipboard")
+		print("-x message                Get message from clipboard")
