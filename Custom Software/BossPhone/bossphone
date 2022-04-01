@@ -66,6 +66,9 @@ elif opt == "-v":
 elif opt == "-x":
         leng(2)
         os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-clipboard-get && echo \\\"\\\"\"")
+elif opt == "-l"
+	leng(2)
+	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-location\"")
 else:
 	if opt != "-i":
 		if opt != "-h":
@@ -81,3 +84,4 @@ else:
 		print("-i username ip password   Set user information")
 		print("-v message                Copy message to clipboard")
 		print("-x message                Get message from clipboard")
+		print("-l                        Get location and GPS data")
