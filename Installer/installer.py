@@ -135,7 +135,7 @@ def getSel(event):
         button["state"] = tk.NORMAL
 
 # get all options
-options = getCities("texasCities.txt")
+options = getCities(".texasCities.txt")
 
 # set a title
 ttk.Label(timezone, text="Timezone Selection", font=("Times", 24)).grid(column=0, row=0)
@@ -167,7 +167,7 @@ def getSell(event):
     ttk.Label(lang, text=" "*60).grid(column=0, row=2, stick="W")
     buttonl["state"] = tk.NORMAL
 
-optionsl = getStates("states.txt")
+optionsl = getStates(".states.txt")
 ttk.Label(lang, text="Language Selection", font=("Times", 24)).grid(column=0, row=0)
 
 labl = ttk.Label(lang, text="Select Language")
@@ -198,7 +198,7 @@ def getSelk(event):
     ttk.Label(keyboard, text=" "*60).grid(column=0, row=2, stick="W")
     buttonk["state"] = tk.NORMAL
 
-optionsk = getKeyb("keyboard_layout.txt")
+optionsk = getKeyb(".keyboard_layout.txt")
 ttk.Label(keyboard, text="Keyboard Selection", font=("Times", 24)).grid(column=0, row=0)
 
 labk = ttk.Label(keyboard, text="Select Keyboard Layout")
