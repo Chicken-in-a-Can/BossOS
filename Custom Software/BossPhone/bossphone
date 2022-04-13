@@ -75,9 +75,6 @@ elif opt == "-g":
 elif opt == "-n":
 	leng(3)
 	os.system("sshpass -p \"" + passwd + "\" ssh " + usr + "@" + ip + " -p 8022 -t \"termux-notification -t \\\"" + opts[2] + "\\\"\"")
-elif opt == "-d":
-	leng(3)
-	os.system("sshpass -p \"" + passwd + "\" scp -P 8022 \"" + opts[2] + "\" " + usr + "@" + ip + ":~/storage/downloads")
 else:
 	if opt != "-i":
 		if opt != "-h":
@@ -96,4 +93,3 @@ else:
 		print("-l                        Get location and GPS data")
 		print("-g 0-255                  Change how much your screen glows")
 		print("-n message                Send notification that says message to phone")
-		print("-d filename               Duplicate file to phone. Goes to Downloads folder")
