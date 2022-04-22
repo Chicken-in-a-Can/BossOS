@@ -7,6 +7,9 @@ BossOS is the executive OS
 - Licensed under the GPL 3.0
 - For the executives
 
+## Join the discord!
+https://discord.gg/uPDFbRV2Ca
+
 ## Expected Features
 Custom Wallpapers  
 Simple installer  
