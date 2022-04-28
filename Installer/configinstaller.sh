@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm -rf .config/neofetch
-mv Configs/neofetch .config
+rm -rf /root/.config/neofetch
+mv -r Configs/neofetch /root/.config
