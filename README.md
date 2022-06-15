@@ -10,7 +10,7 @@ BossOS is the executive OS
 ## Join the discord!
 https://discord.gg/uPDFbRV2Ca
 
-## Official Site
+## Official Site (temporarily down)
 http://theexecutiveos.xyz
 
 ## Expected Features
