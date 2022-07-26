@@ -10,11 +10,14 @@ BossOS is the executive OS
 ## Join the discord!
 https://discord.gg/uPDFbRV2Ca
 
-## Official Site (temporarily down)
+## Official Site
 http://theexecutiveos.xyz
 
+## Current Features
+- Custom wallpapers  
+- Simple installer  
+- Custom config files  
+- Custom software  
+
 ## Expected Features
-Custom Wallpapers  
-Simple installer  
-Custom config files  
-Custom software  
+- Improved current features
