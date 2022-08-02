@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.1.0
+Name[en_US]=BossOS Installer
+GenericName=Installer for BossOS
+Exec=python /root/Installer/installer.py
+Terminal=false
+Type=Application
+Categories=Application;
+Comment[en_US]=It install bOSs

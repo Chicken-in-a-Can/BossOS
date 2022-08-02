@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir bosswork
+cp -r Installer OS/airootfs/root
+cp -r Configs OS/airootfs/root
+cp "Custom Software"/BossPhone/bossphone OS/airootfs/root
+cp "Custom Software"/BossPhone/bossphone OS/airootfs/root
+sudo mkarchiso -w bosswork -o ./ -v OS

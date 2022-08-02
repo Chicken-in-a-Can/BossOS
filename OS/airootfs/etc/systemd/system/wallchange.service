@@ -1,0 +1,9 @@
+[Unit]
+Description=Change wallpaper from default
+
+[Service]
+Type=simple
+ExecStart=/bin/python /root/Configs/changewallpaper.py
+
+[Install]
+WantedBy=multi-user.target
